@@ -1,0 +1,14 @@
+<a class="list-group-item">
+  <div class="post-header">
+    <h4>{{post.feedName}}</h4>
+    <small>{{post.date | date}}</small>
+  </div>
+  <span class="badge">{{post.likesCount}}</span>
+  <p *ngIf="post.messageType === MessageTypeEnum.Text">{{post.text}}</p>
+  <img *ngIf="post.messageType === MessageTypeEnum.Photo"
+       [src]="post.messageData.photo" alt="" style="width: 100px; height: 100px"/>
+  <div class="post-footer">
+    <img [src]="post.feedIcon" alt="" style="width: 45px; height: 45px"/>
+    <span class="signature">{{signature}}</span>
+  </div>
+</a>
